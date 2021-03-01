@@ -89,6 +89,4 @@ ExampleOUT.txt has a total of four columns
 
 (4) Sequence information with mutation.
 
-[Platform]
-
-SvBreak runs on Linux and Unix system.
+THANK YOU!
