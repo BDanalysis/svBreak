@@ -75,14 +75,36 @@ Scipy 1.2.1
   For example,we provide a FASTA file--genome.fa and four FASTAQ files--example1_1.fq, example1_2.fq, example2_1.fq, and example2_2.fq.The first two FASTQ files are one group, the last two FASTQ files are another group.
   
 [Run]
-  a.You need to modify the svBreak.properties file 
+
+  a.You need to modify the svBreak.properties file  
   
-    SvBreak.properties is used to save temp data. You should set its content to "tempdir=your/path/to/temp".
-    
-    For example,you could set its content to "tempdir=xx/xx/xx/temp",/home/shaoqiangwang/ProgramFiles/svBreak/run.
+  SvBreak.properties is used to save temp data. You could set its content to "tempdir=xx/temp","xx" means the path of the temp folder.   
+  
+  For example,in our test environment, we set its content to "tempdir=/home/Guest/ProgramFiles/svBreak/run".
+  
+  b.You could open the Linux terminal in the run folder
+  
+  You could run it by "run runl.sh para1 para2 para3 para4 para5 para6 in run directory".
+  
+  para1:reference file
+  
+  para2:first fastq file
+  
+  para3:secend fastq file
+  
+  para4:the output directory
+  
+  para5:svBreak.properties
+  
+  para6:name of your reference sequence
+  
+  For example,you could open the Linux terminal in the run folder, then run:
+  
+  $ bash run.sh ../example/genome.fa ../example/example2_1.fq ../example/example2_2.fq ../output svBreak.properties chr21
+  
 
 [Output]
-ExampleOUT.txt has a total of four columns
+Output.txt has a total of four columns, the output file will be stored in the output folder.
 
 (1) Reference sequence name
 
@@ -90,6 +112,8 @@ ExampleOUT.txt has a total of four columns
 
 (3) Length of mutation
 
-(4) Sequence information with mutation.
+(4) Sequence information without mutation
+
+(5) Sequence information with mutation
 
 THANK YOU!
