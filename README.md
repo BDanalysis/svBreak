@@ -2,7 +2,11 @@
 
 ##Basic Environment
 
-Linux operation system with python3.x
+Linux operation system 
+
+Python3.5.0
+
+Java 11.0.1
 
 ##Depend Tools
 
@@ -42,17 +46,25 @@ $ export Dir_SAMtools/samtools-1.7:$PATH #Dir_SAMtools is the abosulte directory
 
 $ source .bashrc
 
+[SAMtools]
+
+a. Download:
+
+$ git clone https://github.com/lh3/seqtk
+
+b.Install:
+
+$ cd seqtk
+
+$ make
+
 ##Extra Python Library
 
-$ pip3 install pysam
+TenSorFlow 1.12.0
 
-$ pip3 install sklearn
+Numpy 1.15.4
 
-$ pip3 install scipy
-
-$ pip3 install tensorflow
-
-$ pip3 install numpy
+Scipy 1.2.1
 
 ##Usage of svBreak
 
@@ -60,23 +72,14 @@ $ pip3 install numpy
 
   We need two pair of FASTQ files and a reference sequence FASTA file.
   
-  For example,we could name the FASTA file ExampleFA.fa, name the FASTAQ files ExampleFQ1.fq and ExampleFQ2.fq.
+  For example,we provide a FASTA file--genome.fa and four FASTAQ files--example1_1.fq, example1_2.fq, example2_1.fq, and example2_2.fq.The first two FASTQ files are one group, the last two FASTQ files are another group.
   
 [Run]
-
-a.build ExampleFA.fa index:
-
-$ bwa index ExampleFA.fa
-
-b.use bwa software to process the input file into SAM file
-
-$ bwa mem ExampleFA.fa ExampleFQ1.fq ExampleFQ2.fq > ExampleSAM.sam
-
-c.use svBreak software
-
-You can directly run it by run run.sh ExampleSAM.sam ExampleFA.fa ExampleFQ1.fq ExampleFQ2.fq in run directory.
-
-Or you can change input file and run main.py, you will get ExampleOUT.txt file.
+  a.You need to modify the svBreak.properties file 
+  
+    SvBreak.properties is used to save temp data. You should set its content to "tempdir=your/path/to/temp".
+    
+    For example,you could set its content to "tempdir=xx/xx/xx/temp",/home/shaoqiangwang/ProgramFiles/svBreak/run.
 
 [Output]
 ExampleOUT.txt has a total of four columns
